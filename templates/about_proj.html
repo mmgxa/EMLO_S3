@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="px-3 py-3 text-center">
+            <h1 class="display-4">About this project</h1>
+            <div class="my-2">
+                <img style="max-width: 600px; width: 100%;" src="{{ url_for('static', filename='img/flask+pytorch.png') }}" alt="">
+            </div>
+            <p class="lead">This task was done as an assignment for EMLO (Session 3). <br> <a
+                    href="https://github.com/mmgxa/EMLO_S3"> View on GitHub</a></p>
+        </div>
+    </div>  
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="px-3 py-3 text-center">
+            <h1  class="red-text" style="color: red;"> Project Requirements/Task</h1>
+            <hr style="height:1px;border:none;color:#333;background-color:#456;"/>
+            <h2  class="red-text" style="color: red;">
+                1. Show your name 
+            </h2>
+            <div class="my-2">
+                <img style="max-width: 600px; width: 100%;" src="{{ url_for('static', filename='img/1.png') }}" alt="">
+            </div>
+            <hr style="height:1px;border:none;color:#333;background-color:#456;"/>
+            <h2  class="red-text" style="color: red;">
+                2. Add dropdown menu to chose between personal information and homepage
+            </h2>
+            <div class="my-2">
+                <img style="max-width: 600px; width: 100%;" src="{{ url_for('static', filename='img/2.png') }}" alt="">
+            </div>
+            <hr style="height:1px;border:none;color:#333;background-color:#456;"/>
+            <h2  class="red-text" style="color: red;">
+                3. Give credit to original author
+            </h2>
+            <div class="my-2">
+                <img style="max-width: 600px; width: 100%;" src="{{ url_for('static', filename='img/3.png') }}" alt="">
+            </div>
+            <hr style="height:1px;border:none;color:#333;background-color:#456;"/>
+            <h2  class="red-text" style="color: red;">
+                4. Three file upload on homepage using single button
+            </h2>
+            If you select more than three files, it will give you an error!
+            <div class="my-2">
+                <img style="max-width: 600px; width: 100%;" src="{{ url_for('static', filename='img/4.png') }}" alt="">
+            </div>
+            <hr style="height:1px;border:none;color:#333;background-color:#456;"/>
+            <h2  class="red-text" style="color: red;">
+                5. Last five results
+            </h2>
+            <div class="my-2">
+                <img style="max-width: 600px; width: 100%;" src="{{ url_for('static', filename='img/1.png') }}" alt="">
+            </div>
+            <hr style="height:1px;border:none;color:#333;background-color:#456;"/>
+            <h2  class="red-text" style="color: red;">
+                6. Present with sample image on home page
+            </h2>
+            <div class="my-2">
+                <img style="max-width: 600px; width: 100%;" src="{{ url_for('static', filename='img/6.png') }}" alt="">
+            </div>
+        </div>
+    </div>  
+</div>
+{% endblock %}

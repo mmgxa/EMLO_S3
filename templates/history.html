@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">History of Image Classification</h1>
+        <h3 class="display-5">(Max. 5 Images)</h3>
+    </div>
+
+    <table id="data" class="table table-striped" >
+        <thead>
+        <tr>
+            <th>Image</th>
+            <th>Class</th>
+            <th>Confidence (%)</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for d in data %}
+            <tr>
+            <td style="vertical-align: middle"><img src="{{ url_for('send_file', filename=d[0])}}" style ="width: 200px; max-height: 450px; margin-top: 30px; margin-bottom: 10px"></td>
+            <td style="vertical-align: middle">{{ d[1] }}</td>
+            <td style="vertical-align: middle">{{ d[2] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <p class="mt-5"> <a href="/">Return To Homepage</a></p>
+    </div>
+
+
+{% endblock %}
