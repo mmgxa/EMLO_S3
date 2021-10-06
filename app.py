@@ -4,7 +4,6 @@ import os
 from math import floor
 from werkzeug.utils import secure_filename
 import csv
-import shutil
 
 app = Flask(__name__)
 
@@ -74,9 +73,8 @@ def send_file(filename):
 def sample():
     if request.method == 'POST':
         data = []
-        filename = secure_filename('/sample_image.jpg')
+        filename = secure_filename('sample_image.jpg')
         pth = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-        shutil.copy(filename, pth)
         lbl, confid = model.infer(pth)
         confid = floor(confid * 10000) / 100
         data.append([filename, lbl, confid])
