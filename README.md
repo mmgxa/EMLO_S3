@@ -34,4 +34,9 @@ git push heroku master
 git remote set-url origin git@github.com:mmgxa/EMLO_S3.git
 git push origin master
 
+# additional lines for docker
+heroku container:login
+heroku create ____ (different from line 2)
+heroku container:push web -a ____
+heroku container:release web -a  ____
 ```
