@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM python:3.8-slim-buster
 
 MAINTAINER MMG
 
@@ -6,12 +6,8 @@ WORKDIR /app
 
 COPY './requirements.txt' .
 
-# RUN apt-get install libgtk2.0-dev pkg-config -yqq 
-
-RUN pip install --upgrade pip
-
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["python", "app.py"]
+CMD ["python3", "app.py"]
