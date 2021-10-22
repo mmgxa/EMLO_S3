@@ -8,15 +8,26 @@ Requirements:
 - [x] Give credit to original author
 - [x] Three file upload on homepage using single button
 - [x] Last five results
-- [x] Present with sample image on home page
+- [x] Present with sample image on first run
 
 No changes were made to the model/inference.
 
 All the above requirements are satisfied and can be seen after clicking on the 'About Project' link. 
 
+**Note that sample image will only be presented on first run! This behavior will disappear on subsequent openings UNLESS THE DYNO (ON HEROKU) RESTARTS**
+
 # Steps 
 
 After entering the virtual environment created for the assignment and installing the required dependencies, the following commands were executed in the shell.
+
+
+```
+# To build image for local deployment
+docker build -t pytorchflask .
+
+# To run docker image locally 
+docker run -d -p 127.0.0.1:5000:5000 pytorchflask
+```
 
 ```
 heroku login -i
