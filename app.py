@@ -1,9 +1,11 @@
-from flask import Flask, render_template, request, send_from_directory
+from flask import Flask, render_template, request, send_from_directory, redirect, url_for
 from models import MobileNet
 import os
 from math import floor
 from werkzeug.utils import secure_filename
 import csv
+import sys
+
 
 app = Flask(__name__)
 
@@ -19,6 +21,9 @@ UPLOAD_FOLDER = os.path.join(path, 'uploads')
 
 @app.route('/')
 def index():
+    if app.sample == "True":
+        app.sample = "False"
+        return redirect(url_for('sample'))
     return render_template('index.html')
 
 
@@ -69,9 +74,9 @@ def success():
 def send_file(filename):
     return send_from_directory(UPLOAD_FOLDER, filename)
 
-@app.route('/sample', methods=['POST'])
+@app.route('/sample', methods=['POST', 'GET'])
 def sample():
-    if request.method == 'POST':
+    # if request.method == 'POST':
         data = []
         filename = secure_filename('sample_image.jpg')
         pth = os.path.join(app.config['UPLOAD_FOLDER'], filename)
@@ -85,4 +90,5 @@ def sample():
 
 if __name__ == '__main__':
     app.debug = True
+    app.sample = sys.argv[1]
     app.run(host='0.0.0.0', port=os.environ.get("PORT", 5000), debug=True)
